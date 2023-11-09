@@ -145,6 +145,7 @@ section {
 	display: -ms-flexbox;
 	display: -webkit-box;
 	display: flex;
+	overflow-x: hidden;
 }
 
 /* text */
@@ -162,6 +163,7 @@ section {
 	text-transform: uppercase;
 	text-align: center;
 
+	
 	/* 텍스트애니메이션 */
 	display: inline-block;
 	color: rgb(255, 255, 255);
@@ -246,8 +248,7 @@ h1:after{
 	width: 100%;
 	padding: 10px 30px;
 	box-sizing: border-box;
-
-	
+	margin-bottom:0;	
 }
 
 
