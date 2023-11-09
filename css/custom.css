@@ -1,0 +1,535 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+body {
+	font-family: 'Pretendard', 'ReciaSerifDisplay';
+	font-size: 14px;
+	line-height: 1.2;
+	color: #333;
+	background: url(../images/bg.jpg);
+}
+
+/* header */
+header {
+	width: 100%;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 100;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+input[id="menuicon"] {
+	display: none;
+}
+
+/*메뉴 아이콘 버튼 크기, 위치*/
+input[id="menuicon"]+label {
+	display: block;
+	width: 35px;
+	height: 30px;
+	position: relative;
+	z-index: 100;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+/*메뉴 버튼 클릭했을 때 X버튼 색상*/
+input[id="menuicon"]:checked+label span {
+	background: #fff;
+}
+
+/*메뉴 세줄 버튼*/
+input[id="menuicon"]+label span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	border-radius: 30px;
+	background: #333;
+	transition: all 0.5s;
+}
+
+input[id="menuicon"]+label span:nth-child(1) {
+	top: 0;
+}
+
+input[id="menuicon"]+label span:nth-child(2) {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+input[id="menuicon"]+label span:nth-child(3) {
+	bottom: 0;
+}
+
+/*메뉴 버튼 클릭했을 때 세줄버튼에서 X버튼으로 바뀌는 모습*/
+input[id="menuicon"]:checked+label span:nth-child(1) {
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="menuicon"]:checked+label span:nth-child(2) {
+	opacity: 0;
+}
+
+input[id="menuicon"]:checked+label span:nth-child(3) {
+	bottom: 50%;
+	transform: translateY(50%) rotate(-45deg);
+}
+
+/*메뉴 창*/
+.sidebar {
+	width: 50%;
+	height: 100%;
+	background: #222;
+	position: fixed;
+	top: 0;
+	left: -100%;
+	z-index: 99;
+	transition: all 0.5s;
+}
+
+input[id="menuicon"]:checked+label+div {
+	left: 0;
+}
+
+.sidebar ul {
+	padding: 5em;
+}
+
+.sidebar ul li a {
+	display: inline-block;
+	color: #fff;
+	font-size: 1.5rem;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.sidebar ul li a::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transform-origin: left;
+	transform: scaleX(0);
+	transition: all 0.7s;
+}
+
+.sidebar ul li a:hover::before {
+	transform: scaleX(1);
+}
+
+/* section */
+section {
+	height: calc(100vh - 70px);
+	margin-top: 70px;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+}
+
+/* text */
+.text {
+	flex: 0 0 30%;
+	box-sizing: border-box;
+	padding: 30px;
+	position: relative;
+}
+
+
+.text h1 {
+	font-size: 5rem;
+	padding-bottom: 0.1em;
+	text-transform: uppercase;
+	text-align: center;
+
+	/* 텍스트애니메이션 */
+	display: inline-block;
+	color: rgb(255, 255, 255);
+  font-family: 'Righteous', serif;
+  font-size: 12em; 
+  text-shadow: .05em .05em 0 hsla(230,40%,50%,1);
+}
+
+h1:after{
+    content: attr(data-shadow);
+    position: absolute;
+    top: .06em; left: .06em;
+    z-index: -1;
+    text-shadow: none;
+    background-image:
+      linear-gradient(
+        45deg,
+        transparent 45%,
+        rgb(0, 0, 0) 45%,
+        rgb(0, 0, 0) 55%,
+        transparent 0
+        );
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: shad-anim 15s linear infinite;
+    }
+
+@keyframes shad-anim {
+  0% {background-position: 0 0}
+  0% {background-position: 100% -100%}
+  }
+
+/* 텍스트 애니메이션 */
+
+
+
+
+
+
+
+
+
+.text h6 {
+	font-size: 1rem;
+	padding-bottom: 3em;
+	color: #999;
+	letter-spacing: 5px;
+	text-align: center;
+}
+
+.text h3 {
+	font-size: 2rem;
+	padding-bottom: 1em;
+	font-family: 'ReciaSerifDisplay';
+}
+
+.text a {
+	
+	display: inline-block;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+	font-size: 1rem;
+	border: 1px solid #999;
+	color: #999;
+	text-transform: uppercase;
+	font-weight: bold;
+	transition: all 1s;
+}
+
+.text a:hover {
+	background-color: #999;
+	color: #fff;
+	border-radius: 50px;
+}
+
+.copy {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 30px;
+	box-sizing: border-box;
+
+	
+}
+
+
+p{line-height: 25px;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+/* portfolio */
+.mySwiper {
+	flex: 0 0 70%;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 30px;
+}
+
+.swiper-slide {
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #000;
+	position: relative;
+}
+
+.swiper-slide::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.bg1::before {
+	background: url(../images/a.png) no-repeat center top;
+	background-size: cover;
+
+}
+
+
+
+
+.bg2::before {
+	background: url(../images/2.jpg) no-repeat center top;
+	background-size: cover;
+}
+
+.bg3::before {
+	background: url(../images/3.jpg) no-repeat center top;
+	background-size: cover;
+}
+
+.swiper-slide ul li a {
+	display: block;
+	color: #fff;
+	text-align: center;
+	border: 1px solid #fff;
+	padding: 0.5em 1em;
+	transition: all 1s;
+	position: relative;
+}
+
+.swiper-slide ul li:not(:last-child) a {
+	margin-bottom: 3px;
+}
+
+.swiper-slide ul li a:hover {
+	background-color: #fff;
+	color: #333;
+	border-radius: 50px;
+}
+
+.brand {
+	background-color: #fff;
+	height: ;
+	width: 300px;
+	padding: 16.5px 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.brand h2 {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.swiper-horizontal>.swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+	opacity: 1 !important;
+}
+
+/* popup */
+.popup {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	display: none;
+}
+
+.popup_in {
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.popup_in img {
+	display: block;
+	width: 100%;
+	max-width: 500px;
+	margin: auto;
+}
+
+.popup a {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	color: #fff;
+	font-size: 2rem;
+}
+
+
+
+
+/* about me */
+
+
+
+
+.about_section {
+	height: auto;
+}
+
+.about {
+	flex: 0 0 70%;
+	padding: 30px;
+	box-sizing: border-box;
+}
+
+.about h1 {
+	font-size: 2rem;
+	padding-bottom: 0.2em;
+}
+
+.about h1:not(:first-child) {
+	padding-top: 2em;
+}
+
+/* resume */
+.resume li {
+	margin-bottom: 0.5em;
+}
+
+.resume li h2 {
+	border: 2px solid #ccc;
+	font-size: 1.2rem;
+	padding: 1em;
+	transition: all 0.5s;
+}
+
+.resume li h2 span {
+	float: right;
+	transform: rotate(90deg);
+	transition: all 0.5s;
+}
+
+.resume .on h2 {
+	border-color: #333;
+	background-color: #333;
+	color: #fff;
+}
+
+.resume .on h2 span {
+	transform: rotate(-90deg);
+}
+
+.resume li div {
+	padding: 0.5em 1em 1em 1em;
+	display: none;
+}
+
+.resume li div h3 {
+	font-size: 1.1rem;
+	padding: 0.5em 0;
+}
+
+
+
+
+
+
+
+
+/* skill */
+
+
+
+
+.skill {
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+
+.AD {
+	width: 100px;
+}
+
+.AD2 {
+	width: 100px;
+}
+
+
+
+/* 1300px ~ */
+@media (max-width:1300px) {
+	.skill li {
+		flex: 1 1 50%;
+	}
+}
+
+/* 999px ~ */
+@media (max-width:999px) {
+	section {
+		display: block;
+		height: auto;
+		padding-bottom: 30px;
+		position: relative;
+	}
+
+	.text {
+		position: static;
+	}
+
+	.mySwiper {
+		width: 100%;
+		height: 700px;
+		padding: 30px;
+		box-sizing: border-box;
+	}
+}
+
+
+/* 610px ~ */
+@media (max-width:610px) {
+	.skill li {
+		flex-direction: column;
+		position: relative;
+	}
+
+	.skill h4 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-58%, -70%);
+		margin-right: 0;
+	}
+
+	.skill h5 {
+		padding-top: 1em;
+	}
+}
