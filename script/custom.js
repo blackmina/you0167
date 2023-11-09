@@ -35,7 +35,7 @@ $(function () {
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
-  mousewheel: true,
+  mousewheel: false, //여러개 true
   scrollbar: {
     el: ".swiper-scrollbar",
     hide: true,
