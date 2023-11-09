@@ -173,6 +173,7 @@ section {
 }
 
 h1:after{
+	padding-right: 0.3em;
     content: attr(data-shadow);
     position: absolute;
     top: .06em; left: .06em;
@@ -532,5 +533,22 @@ p{line-height: 25px;
 
 	.skill h5 {
 		padding-top: 1em;
+	}
+}
+
+/* 465px ~ */
+@media (max-width:465px) {
+	/* 9em */
+	.text h1{
+		font-size: 9em;
+	}
+}
+
+
+/* 347px ~ */
+@media (max-width:347px) {
+	/* 7em  347px - 모바일320까지*/
+	.text h1{
+		font-size: 7em;
 	}
 }

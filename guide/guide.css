@@ -1,7 +1,7 @@
 *{margin:0; padding:0;}
 a{text-decoration:none;}
 body{
-    font-family: '맑은 고딕';
+	font-family: 'Righteous', serif;
     font-size: 16px;
     line-height: 26px;
     min-width: 1320px;
@@ -9,7 +9,7 @@ body{
 
 /* 배경색상 */
 .brand1{
-    background-color: #dbd4d0;
+    background-color: rgb(0, 0, 0);
 }
 
 /* 이미지 크기 */
@@ -38,6 +38,6 @@ img{
 	padding: 10px 20px;
 	border-radius: 10px;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-	background: #6a5445;
-	color: #fff;
+	background: #ffffff;
+	color: #000000;
 }
