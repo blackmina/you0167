@@ -18,7 +18,13 @@ body {
 	line-height: 1.2;
 	color: #333;
 	background: url(../images/bg.jpg);
+	overflow-x: hidden;
 }
+
+
+
+
+
 
 /* header */
 header {
@@ -158,7 +164,7 @@ section {
 
 
 .text h1 {
-	font-size: 5rem;
+
 	padding-bottom: 0.1em;
 	text-transform: uppercase;
 	text-align: center;
@@ -199,7 +205,8 @@ h1:after{
   0% {background-position: 100% -100%}
   }
 
-/* 텍스트 애니메이션 */
+/* 텍스트 애니메이션1 */
+
 
 
 
@@ -335,7 +342,6 @@ p{line-height: 25px;
 
 .brand {
 	background-color: #fff;
-	height: ;
 	width: 300px;
 	padding: 16.5px 10px;
 	position: absolute;
@@ -486,16 +492,30 @@ p{line-height: 25px;
 }
 
 
+/* 1530px ~ */
+@media (max-width:1530px) {
+	.text h1{
+		font-size: 8rem;
+	}
+}
+
 
 /* 1300px ~ */
 @media (max-width:1300px) {
 	.skill li {
 		flex: 1 1 50%;
 	}
+	.text h1{
+		font-size: 6rem;
+	}
+	
 }
 
 /* 999px ~ */
 @media (max-width:999px) {
+	.text h1{
+		font-size: 10rem;
+	}
 	section {
 		display: block;
 		height: auto;
@@ -540,15 +560,43 @@ p{line-height: 25px;
 @media (max-width:465px) {
 	/* 9em */
 	.text h1{
-		font-size: 9em;
+		font-size: 9rem;
 	}
 }
 
 
 /* 347px ~ */
-@media (max-width:347px) {
+@media (max-width:400px) {
 	/* 7em  347px - 모바일320까지*/
 	.text h1{
-		font-size: 7em;
+		font-size: 7rem;
 	}
 }
+
+
+/* 마우스효과 */
+b {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	position: absolute;
+	pointer-events: none;
+	background: #55b9f3;
+	transform: translate(-50%, -50%);
+	animation: blow 4s linear infinite;
+  }
+  
+  
+  @keyframes blow {
+	0% {
+	  transform: translate(-50%, -50%);
+	  opacity: 1;
+	  filter: hue-rotate(0deg);
+	}
+	100% {
+	  transform: translate(-50%, -1000%);
+	  opacity: 0;
+	  filter: hue-rotate(720deg);
+	}
+  }
+  /* 마우스효과 */
